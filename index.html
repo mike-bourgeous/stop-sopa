@@ -106,6 +106,31 @@ body {
     background: -webkit-gradient(radial, center center, 0, center center, 350, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.8)));
     background: -moz-radial-gradient(center 45deg, circle closest-side, transparent 0, rgba(0,0,0,0.8) 350px);
 }
+
+#stop-sopa-link {
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    font-size: 16px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    background: #000;
+    color: #ddd;
+    opacity: 0.8;
+    text-decoration: none;
+
+    -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.45);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.45);
+}
+
+#stop-sopa-link:hover {
+	color: #fff;
+}
 </style>
 
 </head>
@@ -120,6 +145,7 @@ body {
     </div>
     <div id="sopabox-spot"></div>
 </div>
+<a href="#sopa-box" id="stop-sopa-link">STOP SOPA!</a>
 
 <script type="text/javascript" language="javascript" charset="utf-8">
 /**
@@ -138,6 +164,7 @@ body {
 var text = null;
 var spot = null;
 var box = null;
+var pagelink = null;
 var boxProperty = '';
 
 init();
@@ -146,6 +173,7 @@ function init() {
     text = document.getElementById('sopabox-text');
     spot = document.getElementById('sopabox-spot');
     box = document.getElementById('sopabox-box');
+    pagelink = document.getElementById('stop-sopa-link');
     
     if (typeof box.style.webkitBoxShadow == 'string') {
         boxProperty = 'webkitBoxShadow';
@@ -156,8 +184,32 @@ function init() {
     }
 
     if (text && spot && box) {
-        document.getElementById('sopa-box').onmousemove = onMouseMove;
-        document.getElementById('sopa-box').ontouchmove = function (e) {e.preventDefault(); e.stopPropagation(); onMouseMove({clientX: e.touches[0].clientX, clientY: e.touches[0].clientY});};
+        var tsb = document.getElementById('sopa-box');
+        var wall = document.getElementById('sopabox-wall');
+        var link = document.getElementById('sopabox-link');
+
+        tsb.onmousemove = onMouseMove;
+        tsb.ontouchmove = function (e) {e.preventDefault(); e.stopPropagation(); onMouseMove({clientX: e.touches[0].clientX, clientY: e.touches[0].clientY});};
+
+        tsb.onclick = function(e) {
+            tsb.style.display = 'none';
+            if(pagelink) {
+                pagelink.style.display = 'block';
+            }
+        };
+
+        wall.onclick = function(e) { e.stopPropagation(); };
+        link.onclick = function(e) { e.stopPropagation(); };
+    }
+
+    if(pagelink) {
+        pagelink.style.display = 'none';
+
+        pagelink.onclick = function(e) {
+            tsb.style.display = 'block';
+            pagelink.style.display = 'none';
+            e.preventDefault();
+        };
     }
 }
 
