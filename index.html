@@ -14,7 +14,7 @@ body {
     padding: 0;
 }
 
-#text-shadow-box {
+#sopa-box {
     position: fixed;
     left: 0;
     right: 0;
@@ -29,8 +29,8 @@ body {
 	-webkit-user-select: none;
 }
 
-#text-shadow-box #tsb-text,
-#text-shadow-box #tsb-link {
+#sopa-box #sopabox-text,
+#sopa-box #sopabox-link {
     position: absolute;
     top: 40%;
     left: 0;
@@ -43,19 +43,19 @@ body {
     text-align: center;
 }
 
-#text-shadow-box #tsb-text {
+#sopa-box #sopabox-text {
     font-size: 100px;
     color: transparent;
     text-shadow: black 0px -45.2px 19px; 
 }
 
-#text-shadow-box #tsb-link a {
+#sopa-box #sopabox-link a {
     color: #999;
     text-decoration: none;
 }
 
-#text-shadow-box #tsb-box,
-#text-shadow-box #tsb-wall {
+#sopa-box #sopabox-box,
+#sopa-box #sopabox-wall {
     position: absolute;
     top: 40%;
     left: 0;
@@ -63,16 +63,16 @@ body {
     height: 60%;
 }
 
-#text-shadow-box #tsb-box {
+#sopa-box #sopabox-box {
     -webkit-box-shadow: black 0px -45.2px 39px;
     -moz-box-shadow: black 0px -45.2px 39px;
 }
 
-#text-shadow-box #tsb-wall {
+#sopa-box #sopabox-wall {
     background: #999;
 }
 
-#text-shadow-box #tsb-wall p {
+#sopa-box #sopabox-wall p {
     font-size: 18px;
     line-height: 1.5em;
     text-align: justify;
@@ -81,17 +81,17 @@ body {
     margin: 1.5em auto;
 }
 
-#text-shadow-box #tsb-wall p a {
+#sopa-box #sopabox-wall p a {
     color: #fff;
 }
 
-#text-shadow-box #tsb-wall p a:hover {
+#sopa-box #sopabox-wall p a:hover {
     text-decoration: none;
     color: #000;
     background: #fff;
 }
 
-#tsb-spot {
+#sopabox-spot {
     position: absolute;
     top: -50%;
     left: -50%;
@@ -106,14 +106,14 @@ body {
 </head>
 <body>
     
-<div id="text-shadow-box">
-    <div id="tsb-box"></div>
-    <p id="tsb-text">STOP SOPA!</p>
-    <p id="tsb-link"><a href="http://americancensorship.org/">STOP SOPA!</a></p>
-    <div id="tsb-wall">
+<div id="sopa-box">
+    <div id="sopabox-box"></div>
+    <p id="sopabox-text">STOP SOPA!</p>
+    <p id="sopabox-link"><a href="http://americancensorship.org/">STOP SOPA!</a></p>
+    <div id="sopabox-wall">
         <p>This site has gone dark today in protest of the U.S. Stop Online Piracy Act (SOPA) and PROTECT-IP Act (PIPA).  The U.S. Congress is about to censor the Internet, even though the vast majority of Americans are opposed. We need to kill these bills to protect our rights to free speech, privacy, and prosperity.  Learn more at <a href="http://americancensorship.org/">AmericanCensorship.org</a></p>
     </div>
-    <div id="tsb-spot"></div>
+    <div id="sopabox-spot"></div>
 </div>
 
 <script type="text/javascript" language="javascript" charset="utf-8">
@@ -133,9 +133,9 @@ var boxProperty = '';
 init();
 
 function init() {
-    text = document.getElementById('tsb-text');
-    spot = document.getElementById('tsb-spot');
-    box = document.getElementById('tsb-box');
+    text = document.getElementById('sopabox-text');
+    spot = document.getElementById('sopabox-spot');
+    box = document.getElementById('sopabox-box');
     
     if (typeof box.style.webkitBoxShadow == 'string') {
         boxProperty = 'webkitBoxShadow';
@@ -146,8 +146,8 @@ function init() {
     }
 
     if (text && spot && box) {
-        document.getElementById('text-shadow-box').onmousemove = onMouseMove;
-        document.getElementById('text-shadow-box').ontouchmove = function (e) {e.preventDefault(); e.stopPropagation(); onMouseMove({clientX: e.touches[0].clientX, clientY: e.touches[0].clientY});};
+        document.getElementById('sopa-box').onmousemove = onMouseMove;
+        document.getElementById('sopa-box').ontouchmove = function (e) {e.preventDefault(); e.stopPropagation(); onMouseMove({clientX: e.touches[0].clientX, clientY: e.touches[0].clientY});};
     }
 }
 
