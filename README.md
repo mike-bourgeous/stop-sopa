@@ -1,11 +1,19 @@
 # STOP SOPA
 
-This repository is my take on "going dark" for the [January 18 blackout to protest SOPA](http://sopastrike.com/).
+This repository is an overlay version of zachstronaut's STOP SOPA page for the [January 18 blackout to protest SOPA](http://sopastrike.com/).
 
-You can use the provided **`index.html`** as your site's homepage on January 18 as one possible way to participate.
+You can copy the contents of the provided **`index.html`** into your site's homepage on January 18 as one possible way to participate.
 
-[**It looks like this.**](http://www.zachstronaut.com/lab/text-shadow-box/stop-sopa.html)
+Changes from the original:
+
+ * Reduced the text box from full-page
+ * Made the background transparent
+ * Added the ability to close/open the overlay, so the site can still be used
+
+[**Here's what the base template looks like**](http://www.nitrogenlogic.com/sopa.html)
+
+[**Here's the template in action**](http://www.nitrogenlogic.com/sopaindex.html)
 
 ---
 
-I felt inspired by the "going dark" theme.  I've been calling my representatives in Congress, but this gave me another outlet for my frustration with this legislation.  I place this code in the public domain.  I require no attribution.
+This template, like the original, is placed in the public domain.
