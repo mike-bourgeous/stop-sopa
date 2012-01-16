@@ -49,7 +49,7 @@ body {
 #sopa-box #sopabox-text {
     font-size: 100px;
     color: transparent;
-    text-shadow: black 0px -45.2px 19px; 
+    text-shadow: black 0px -45.2px 19px;
 }
 
 #sopa-box #sopabox-link a {
@@ -139,7 +139,7 @@ body {
 
 </head>
 <body>
-    
+
 <div id="sopa-box">
     <div id="sopabox-box"></div>
     <p id="sopabox-text">STOP SOPA!</p>
@@ -159,7 +159,7 @@ body {
  *
  * Fork it on GitHub: https://github.com/zachstronaut/stop-sopa
  */
- 
+
 /**
  * Modified by Mike Bourgeous - still in the public domain.
  * https://github.com/nitrogenlogic/stop-sopa
@@ -178,7 +178,7 @@ function init() {
     spot = document.getElementById('sopabox-spot');
     box = document.getElementById('sopabox-box');
     pagelink = document.getElementById('stop-sopa-link');
-    
+
     if (typeof box.style.webkitBoxShadow == 'string') {
         boxProperty = 'webkitBoxShadow';
     } else if (typeof box.style.MozBoxShadow == 'string') {
@@ -222,11 +222,11 @@ function onMouseMove(e) {
     var ym = (e.clientY - Math.floor(window.innerHeight / 3)) * 0.4;
     var d = Math.round(Math.sqrt(xm*xm + ym*ym) / 5);
     text.style.textShadow = -xm + 'px ' + -ym + 'px ' + (d + 10) + 'px black';
-    
+
     if (boxProperty) {
         box.style[boxProperty] = -xm + 'px ' + (16 - ym) + 'px ' + (d + 30) + 'px 16px black';
     }
-    
+
     xm = e.clientX - Math.floor(window.innerWidth / 2);
     ym = e.clientY - Math.floor(window.innerHeight / 2);
     spot.style.backgroundPosition = xm + 'px ' + ym + 'px';
