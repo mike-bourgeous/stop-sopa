@@ -10,7 +10,7 @@ Changes from the original:
  * Made the background transparent
  * Added the ability to close/open the overlay, so the site can still be used
 
-[**Here's what the base template looks like**](http://nitrogenlogic.github.com/stop-sopa/sopalight.html) ([Dark version](http://nitrogenlogic.github.com/sopadark.html))
+[**Here's what the base template looks like**](http://nitrogenlogic.github.com/stop-sopa/sopalight.html) ([Dark version](http://nitrogenlogic.github.com/stop-sopa/sopadark.html))
 
 ---
 
